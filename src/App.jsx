@@ -9,8 +9,8 @@ const SideOCBtn = styled.button`
   left: ${(props) =>
     props.openSB
       ? "270px"
-      : "20px"}; /* Adjust position to avoid sidebar overlap */
-  z-index: 100; /* Ensure the button is always on top */
+      : "20px"};
+  z-index: 100;
   width: 120px;
   height: 45px;
   background-color: #444;

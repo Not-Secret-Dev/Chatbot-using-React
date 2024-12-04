@@ -5,12 +5,12 @@ const Sidebar = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: ${(props) => (props.openSB ? "250px" : "0")}; /* Sidebar width */
+  width: ${(props) => (props.openSB ? "250px" : "0")};
   height: 100%;
   background-color: #222;
   overflow-x: hidden;
   transition: width 0.3s ease;
-  z-index: 98; /* Ensure the sidebar is behind the button */
+  z-index: 98; 
 `;
 
 const SidebarContent = styled.div`
