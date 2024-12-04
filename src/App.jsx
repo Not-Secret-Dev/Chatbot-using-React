@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import styled from "styled-components";
+import HeaderComponent from "./Components/Header/HeaderComponent";
+import AsideComponent from "./Components/Aside/AsideComponent";
+
+const SideOCBtn = styled.button`
+  position: fixed;
+  top: 20px;
+  left: ${(props) =>
+    props.openSB
+      ? "270px"
+      : "20px"}; /* Adjust position to avoid sidebar overlap */
+  z-index: 100; /* Ensure the button is always on top */
+  width: 120px;
+  height: 45px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: left 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    background-color: #555;
+  }
+`;
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [openSB, setOpenSB] = useState(false);
+
+  const handleSideOCBtn = () => {
+    setOpenSB((prevState) => !prevState);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header style={{ display: "flex", alignItems: "center" }}>
+        <div className="aside">
+          <AsideComponent openSB={openSB} />
+          <SideOCBtn onClick={handleSideOCBtn}>
+            {openSB ? "Close Sidebar" : "Open Sidebar"}
+          </SideOCBtn>
+        </div>
+        <HeaderComponent />
+      </header>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
