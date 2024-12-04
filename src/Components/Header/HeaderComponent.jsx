@@ -8,15 +8,25 @@ const HeaderContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 18px;
   color: white;
   margin: 0;
+
+  &:hover {
+    color: gray;
+    cursor: pointer;
+  }
 `;
 
 const Subtitle = styled.p`
-  font-size: 16px;
+  font-size: 12px;
   color: gray;
   text-align: right;
+
+  &:hover {
+    color: #444444;
+    cursor: pointer;
+  }
 `;
 
 function HeaderComponent() {
