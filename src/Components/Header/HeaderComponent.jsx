@@ -4,6 +4,7 @@ import styled from "styled-components";
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 12px;
 `;
 
 const Title = styled.h1`
@@ -13,14 +14,15 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-size: 14px;
+  font-size: 16px;
   color: gray;
+  text-align: right;
 `;
 
 function HeaderComponent() {
   return (
     <HeaderContainer>
-      <Title>Named Chatbot</Title>
+      <Title>Un-named Chatbot</Title>
       <Subtitle>By Aayan Mumtaz</Subtitle>
     </HeaderContainer>
   );
