@@ -29,9 +29,10 @@ const Card = styled.div`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 150px;
   margin: 10px;
-  font-size: 10px;
+  font-size: 12px;
   justify-content: center;
   background-color: transparent;
+  transition: 0.2s all;
 
   &:hover {
     background-color: #343434;
