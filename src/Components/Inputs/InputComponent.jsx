@@ -23,6 +23,7 @@ const InputBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 23px 0;
 `;
 
 const QueryBox = styled.input`
