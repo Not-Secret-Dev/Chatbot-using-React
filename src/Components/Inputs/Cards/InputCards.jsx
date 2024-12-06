@@ -11,13 +11,24 @@ const Cards = styled.div`
   justify-content: center;
 `;
 
-const InputCards = () => {
+const InputCards = ({ onCardClick }) => {
+  const cards = [
+    { icon: CiImageOn, text: "Create Image" },
+    { icon: CiGift, text: "Surprise Me" },
+    { icon: FaRegEye, text: "Analyze Images" },
+    { icon: LuPencilLine, text: "Help Me Write" },
+  ];
+
   return (
     <Cards>
-      <InputCard Icon={CiImageOn} TextContent="Create Image" />
-      <InputCard Icon={CiGift} TextContent="Surprise Me" />
-      <InputCard Icon={FaRegEye} TextContent="Analyze Images" />
-      <InputCard Icon={LuPencilLine} TextContent="Help Me Write" />
+      {cards.map((card, index) => (
+        <InputCard
+          key={index}
+          Icon={card.icon}
+          TextContent={card.text}
+          onClick={() => onCardClick(card.text)} 
+        />
+      ))}
     </Cards>
   );
 };

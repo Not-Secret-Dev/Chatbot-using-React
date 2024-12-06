@@ -44,9 +44,9 @@ const Card = styled.div`
   }
 `;
 
-const InputCard = ({ Icon, TextContent }) => {
+const InputCard = ({ Icon, TextContent, onClick }) => {
   return (
-    <Card>
+    <Card onClick={onClick}>
       <IconWrapper>
         <Icon id="Icon" />
       </IconWrapper>

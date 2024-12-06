@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FaArrowUp } from "react-icons/fa6";
 import InputCards from "./Cards/InputCards";
@@ -65,6 +65,16 @@ const SendButton = styled.button`
 `;
 
 const InputComponent = () => {
+  const [query, setQuery] = useState(""); 
+
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  const handleCardClick = (text) => {
+    setQuery((prevQuery) => prevQuery + (prevQuery ? " " : "") + text);
+  };
+
   return (
     <>
       <Heading>
@@ -72,12 +82,16 @@ const InputComponent = () => {
         <p>How can I help you today?</p>
       </Heading>
       <InputBox>
-        <QueryBox placeholder="Enter message" />
+        <QueryBox
+          placeholder="Enter message"
+          value={query}
+          onChange={handleInputChange} 
+        />
         <SendButton>
           <FaArrowUp id="send-btn" />
         </SendButton>
       </InputBox>
-      <InputCards />
+      <InputCards onCardClick={handleCardClick} />
     </>
   );
 };
