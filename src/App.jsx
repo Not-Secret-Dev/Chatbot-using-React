@@ -30,6 +30,16 @@ const Header = styled.header`
   justify-content: space-between;
   max-width: 1300px;
   margin: auto;
+
+  #chats-history:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  #expand:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
 `;
 
 const Main = styled.main`
@@ -52,6 +62,7 @@ function App() {
           }}
         >
           <CiChat1
+            id="chats-history"
             style={{
               margin: "0 12px 0 0",
               fontSize: "xx-large",
@@ -59,6 +70,7 @@ function App() {
           />
           <HeaderComponent />
           <MdExpandMore
+            id="expand"
             style={{
               fontSize: "x-large",
             }}
