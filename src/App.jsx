@@ -4,6 +4,7 @@ import HeaderComponent from "./Components/Header/HeaderComponent";
 import InputComponent from "./Components/Inputs/InputComponent";
 import { CiChat1 } from "react-icons/ci";
 import { MdExpandMore } from "react-icons/md";
+import FooterComponent from "./Components/FooterComponent/FooterComponent";
 
 const HeaderImage = styled.img`
   width: 35px;
@@ -14,14 +15,6 @@ const HeaderImage = styled.img`
     opacity: 0.7;
     cursor: pointer;
   }
-`;
-
-const FooterComponent = styled.footer`
-  position: absolute;
-  bottom: 6px;
-  left: 37.5%;
-  font-size: smaller;
-  color: gray;
 `;
 
 const Header = styled.header`
@@ -81,9 +74,7 @@ function App() {
       <Main>
         <InputComponent />
       </Main>
-      <FooterComponent>
-        Un-named Bot can make mistakes. Check important info.
-      </FooterComponent>
+      <FooterComponent />
     </>
   );
 }
