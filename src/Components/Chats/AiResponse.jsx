@@ -16,8 +16,20 @@ export const getAIResponse = async (userMessage) => {
       }),
     });
 
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("API Error:", errorData);
+      return "Error retrieving response.";
+    }
+
     const data = await response.json();
-    return data?.candidates[0]?.content?.parts[0]?.text || "No response";
+    console.log(data); // Log response to inspect it
+
+    if (data?.candidates && data.candidates.length > 0) {
+      return data.candidates[0]?.content?.parts[0]?.text || "No content";
+    } else {
+      return "No candidates found";
+    }
   } catch (error) {
     console.error("Error fetching AI response:", error);
     return "Error retrieving response.";
